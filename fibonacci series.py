@@ -1,19 +1,34 @@
-#  recursive
-# using DP
-def fibo(n):
-    f = [0, 1]
+def recur_fibo(n):
+   if n <= 1:
+       return n
+   else:
+       return(recur_fibo(n-1) + recur_fibo(n-2))
 
-    for i in range(2, n+1):
-        f.append(f[i-1] + f[i-2])
-    return f[n]
+nterms = 10
 
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Plese enter a positive integer")
+else:
+   print("Fibonacci sequence using recursive method:")
+   for i in range(nterms):
+       print(recur_fibo(i))
 
-def fab(n):
-    if n <= 1:
-        return n
+# Program to display the Fibonacci sequence using non recursive method.
 
-    return (fab(n-1) + fab(n-2))
+print("Fibonacci sequence using recursive method:")
+# n=int(input("Enter the number of terms needed "))
 
+n = 10
+a = 0
+b = 1
 
-n = 9
-print(fab(n))
+print(a)
+print(b)
+
+while (n - 2):
+    c = a + b
+    a = b
+    b = c
+    print(c)
+    n = n - 1
